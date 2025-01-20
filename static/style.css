@@ -1,0 +1,227 @@
+/* Základní nastavení */
+body {
+    background-color: #F3DDCAFF;
+    font-family: Arial, sans-serif;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    cursor: pointer;
+}
+
+/* Horní navbar */
+.navbar-top {
+    background-color: #c56854; /* Tmavší odstín */
+    color: #FFFFFF;
+    padding: 5px 0; /* Zajištění pevné výšky */
+}
+
+.navbar-top .navbar-text {
+    margin: 0;
+    line-height: 1.5; /* Zarovnání textu na střed */
+}
+
+.navbar-top .navbar-text a {
+    color: #FFFFFF !important;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.navbar-top .navbar-text a:hover {
+    text-decoration: underline !important;
+}
+
+/* Dropdown menu */
+.navbar-top .dropdown-menu {
+    position: absolute; /* Odpojení od toku dokumentu */
+    top: 100%; /* Menu pod navbar */
+    left: auto;
+    right: 0; /* Zarovnání doprava */
+    z-index: 1050; /* Zajištění překrytí */
+    display: none; /* Skrytí menu */
+    background-color: #c56854; /* Barva pozadí menu */
+    border: none;
+    padding: 0;
+}
+
+.navbar-top .dropdown:hover .dropdown-menu {
+    display: block; /* Zobrazí menu při hoveru */
+}
+
+.navbar-top .dropdown-item {
+    color: #FFFFFF;
+    padding: 8px 15px;
+    text-align: left;
+}
+
+.navbar-top .dropdown-item:hover {
+    background-color: #a54a33; /* Zvýraznění při hoveru */
+}
+
+/* Hlavní navbar */
+.navbar-main {
+    background-color: #CF8140 !important; /* Stejná barva jako patička */
+    color: #0e0e0e;
+    padding: 10px 0;
+}
+
+.navbar-main .nav-link {
+    color: #000000 !important;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.navbar-main .nav-link:hover {
+    text-decoration: underline !important;
+}
+
+/* Logo */
+.navbar-brand {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 50px;
+    color: #000000;
+}
+
+.dropdown-item img {
+    margin-right: 8px;
+    border-radius: 2px;
+}
+
+/* Patička */
+footer {
+    background-color: #CF8140;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+footer a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Karty */
+.card {
+    background-color: #F3DDCAFF;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.card-text {
+    color: #444444;
+}
+
+.card .btn-primary {
+    background-color: #CF8140;
+    border: none;
+    color: #0c0c0c;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.card .btn-primary:hover {
+    background-color: #b36f35;
+    color: #020202;
+}
+
+/* Formuláře */
+form input,
+form textarea {
+    background-color: #F3DDCAFF;
+    border: 1px solid #D2957A;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border: 2px solid #C47F65;
+    box-shadow: 0 0 5px #C47F65;
+}
+
+form .btn-primary {
+    background-color: #CF8140;
+    border: none;
+    color: #0e0e0e;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+form .btn-primary:hover {
+    background-color: #b36f35;
+    color: #FFFFFF;
+}
+
+/* Rezervace tlačítko */
+.btn-reservace {
+    background-color: #CF8140;
+    color: white;
+    font-size: 18px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-reservace:hover {
+    background-color: #b36f35;
+    color: white;
+}
+
+/* Lightbox */
+.lightboxOverlay {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.lb-image {
+    max-width: 90vw !important;
+    max-height: 90vh !important;
+}
+
+/* Responsivita */
+@media (max-width: 576px) {
+    .navbar-brand img {
+        height: 40px; /* Menší logo */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 14px; /* Menší text v navigaci */
+    }
+
+    .card {
+        margin-bottom: 20px; /* Více místa mezi kartami */
+    }
+
+    .container {
+        padding: 10px; /* Menší odsazení na okrajích */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 45px;
+    }
+
+    .card-title {
+        font-size: 18px; /* Menší nadpisy karet */
+    }
+}

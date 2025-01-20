@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ room.name }} - Karlsbad Apartments
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4" style="font-family: 'Playfair Display', serif; font-size: 3rem;">{{ room.name }}</h1>
+    <div class="row mb-4">
+        <div class="col-lg-12 text-center">
+            <a href="{{ room.image.url }}" data-lightbox="gallery" data-title="{{ room.name }}">
+                <img src="{{ room.image.url }}" class="img-fluid rounded shadow"
+                     alt="{{ room.name }}" style="max-width: 100%; height: auto;">
+            </a>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-lg-12">
+            <h2 class="mb-3" style="font-family: 'Playfair Display', serif; color: #A37D58;">Popis</h2>
+            <p style="font-size: 1.2rem; line-height: 1.6;">{{ room.description }}</p>
+            <p style="font-weight: bold; font-size: 1.1rem;">Kapacita: {{ room.capacity }} osob</p>
+        </div>
+    </div>
+
+    <h3 class="text-center mb-4" style="font-family: 'Playfair Display', serif; color: #A37D58;">Galerie</h3>
+    <div class="row">
+        {% for image in room.images.all %}
+        <div class="col-md-4 col-6 mb-3 text-center">
+            <a href="{{ image.image.url }}" data-lightbox="gallery" data-title="{{ room.name }}">
+                <img src="{{ image.image.url }}" class="img-fluid rounded shadow"
+                     alt="{{ room.name }} obrázek" style="max-width: 100%; height: auto;">
+            </a>
+        </div>
+        {% empty %}
+        <p class="text-center">Žádné další obrázky nejsou k dispozici.</p>
+        {% endfor %}
+    </div>
+
+    <div class="text-center my-5">
+        <a href="{% url 'reserve_room' room.id %}" class="btn btn-lg"
+           style="background-color: #A37D58; color: white; font-size: 1.2rem; padding: 10px 30px;">
+            Rezervovat tento pokoj
+        </a>
+    </div>
+</div>
+{% endblock %}

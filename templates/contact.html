@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Kontakt - Karlsbad Apartments
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4" style="font-family: 'Brush Script MT', cursive;">Kontaktujte nás</h1>
+    <p class="text-center mb-5">Máte nějaké dotazy? Neváhejte nás kontaktovat pomocí formuláře níže.</p>
+    <form action="" method="post" class="p-4" style="background-color: #F3DDCAFF; border-radius: 10px;">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Vaše jméno</label>
+            <input type="text" class="form-control input-custom" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Váš e-mail</label>
+            <input type="email" class="form-control input-custom" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Vaše zpráva</label>
+            <textarea class="form-control input-custom" id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn" style="background-color: #B0603BFF; color: white;">Odeslat zprávu</button>
+    </form>
+</div>
+{% endblock %}

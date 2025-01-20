@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Karlsbad Apartments{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <!-- Horní navbar -->
+    <nav class="navbar navbar-top py-2">
+        <div class="container d-flex justify-content-between">
+            <span class="navbar-text">
+                <a href="mailto:karlsbad_apartments@email.cz">karlsbad_apartments@email.cz</a> | +420 720 487 825
+            </span>
+            <ul class="navbar-nav ms-auto d-flex flex-row align-items-center">
+                <!-- Jazyková nabídka -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownLang" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{% static 'images/flags/cz.png' %}" alt="Čeština" class="me-2" style="width: 20px; height: 14px;">
+                        Čeština
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownLang">
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <img src="{% static 'images/flags/cz.png' %}" alt="Čeština" class="me-2" style="width: 20px; height: 14px;">
+                                Čeština
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <img src="{% static 'images/flags/gb.png' %}" alt="Angličtina" class="me-2" style="width: 20px; height: 14px;">
+                                Angličtina
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <img src="{% static 'images/flags/de.png' %}" alt="Němčina" class="me-2" style="width: 20px; height: 14px;">
+                                Němčina
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <img src="{% static 'images/flags/ru.png' %}" alt="Ruština" class="me-2" style="width: 20px; height: 14px;">
+                                Ruština
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hlavní navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg py-3">
+        <div class="container d-flex align-items-center">
+            <a class="navbar-brand d-flex align-items-center me-4" href="{% url 'home' %}">
+                <img src="{% static 'images/logo.jpg' %}" alt="Logo" class="logo-img" style="height: 50px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="{% url 'home' %}">Domů</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="{% url 'reservation' %}">Rezervace</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="{% url 'room_list' %}">Pokoje</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="{% url 'contact' %}">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Patička -->
+    <footer class="text-center text-white" style="background-color: #CF8140; padding: 10px;">
+        <p>&copy; 2024 Karlsbad Apartments. Všechna práva vyhrazena.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
