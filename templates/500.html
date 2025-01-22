@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chyba 500 - Vnitřní chyba serveru</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container text-center my-5">
+        <h1>500 - Vnitřní chyba serveru</h1>
+        <p>Omlouváme se, ale na serveru došlo k neočekávané chybě.</p>
+        <a href="{% url 'home' %}" class="btn btn-primary">Zpět na hlavní stránku</a>
+    </div>
+</body>
+</html>

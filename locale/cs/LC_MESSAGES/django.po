@@ -1,0 +1,235 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-21 16:56+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
+"<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+
+#: .\KarlsbadApartmentsA\settings.py:143 .\KarlsbadApartmentsA\settings.py:153
+msgid "Czech"
+msgstr "Čeština"
+
+#: .\KarlsbadApartmentsA\settings.py:144 .\KarlsbadApartmentsA\settings.py:154
+msgid "English"
+msgstr "Angličtina"
+
+#: .\KarlsbadApartmentsA\settings.py:145 .\KarlsbadApartmentsA\settings.py:155
+msgid "German"
+msgstr "Němčina"
+
+#: .\KarlsbadApartmentsA\settings.py:146 .\KarlsbadApartmentsA\settings.py:156
+msgid "Russian"
+msgstr "Ruština"
+
+#: .\templates\base.html:9
+msgid "Karlsbad Apartments"
+msgstr "Karlsbad Apartments"
+
+#: .\templates\base.html:20
+msgid "karlsbad_apartments@email.cz"
+msgstr "karlsbad_apartments@email.cz"
+
+#: .\templates\base.html:27 .\templates\base.html:33
+msgid "Čeština"
+msgstr "Čeština"
+
+#: .\templates\base.html:39
+msgid "Angličtina"
+msgstr "Angličtina"
+
+#: .\templates\base.html:45
+msgid "Němčina"
+msgstr "Němčina"
+
+#: .\templates\base.html:51
+msgid "Ruština"
+msgstr "Ruština"
+
+#: .\templates\base.html:66
+msgid "Toggle navigation"
+msgstr "Přepnout navigaci"
+
+#: .\templates\base.html:72
+msgid "Domů"
+msgstr "Domů"
+
+#: .\templates\base.html:75
+msgid "Rezervace"
+msgstr "Rezervace"
+
+#: .\templates\base.html:78
+msgid "Pokoje"
+msgstr "Pokoje"
+
+#: .\templates\base.html:81 .\templates\contact.html:6
+msgid "Kontakt"
+msgstr "Kontakt"
+
+#: .\templates\base.html:95
+msgid "Všechna práva vyhrazena"
+msgstr "Všechna práva vyhrazena"
+
+#: .\templates\contact.html:11
+msgid "Kontaktujte nás"
+msgstr "Kontaktujte nás"
+
+#: .\templates\contact.html:12
+msgid "Máte nějaké dotazy? Neváhejte nás kontaktovat pomocí formuláře níže."
+msgstr "Máte nějaké dotazy? Neváhejte nás kontaktovat pomocí formuláře níže."
+
+#: .\templates\contact.html:16
+msgid "Vaše jméno"
+msgstr "Vaše jméno"
+
+#: .\templates\contact.html:20
+msgid "Váš e-mail"
+msgstr "Váš e-mail"
+
+#: .\templates\contact.html:24
+msgid "Vaše zpráva"
+msgstr "Vaše zpráva"
+
+#: .\templates\contact.html:27
+msgid "Odeslat zprávu"
+msgstr "Odeslat zprávu"
+
+#: .\templates\home.html:12
+msgid "Vítejte na stránkách Karlsbad Apartments"
+msgstr "Vítejte na stránkách Karlsbad Apartments"
+
+#: .\templates\home.html:13
+msgid ""
+"Útulně zařízené apartmány s unikátní polohou, v lázeňské části Karlových "
+"Varů, jen pár minut chůze od hlavní Mlýnské kolonády a Vřídla. Určeny jsou "
+"jak pro páry, tak i pro rodiny s dětmi. V našem ubytování jsou povoleni a "
+"vítání i domácí mazlíčci. Nabízíme plně vybavené dvoulůžkové a čtyřlůžkové "
+"apartmány. Přijeďte si k nám vychutnat příjemnou atmosféru tohoto úchvatného "
+"města a využít tak celoroční možnost ochutnat lázeňské prameny nebo se "
+"vykoupat přímo v bazénu s termální vodou. Navštívit rovněž můžete jedinečný "
+"Vánoční dům a nebo Motýlí dům, který je umístěn na vyhlídce Diana. V zimě "
+"můžete využít nedaleké sjezdovky na Klínovci, zažít vánoční atmosféru na "
+"místních vánočních trzích, v létě pak nespočetné množství turistických tras "
+"a kulturních akcí, například celosvětově známý Filmový festival."
+msgstr "Útulně zařízené apartmány s unikátní polohou, v lázeňské části Karlových Varů, jen pár minut chůze od hlavní Mlýnské kolonády a Vřídla. Určeny jsou jak pro páry, tak i pro rodiny s dětmi. V našem ubytování jsou povoleni a vítání i domácí mazlíčci. Nabízíme plně vybavené dvoulůžkové a čtyřlůžkové apartmány. Přijeďte si k nám vychutnat příjemnou atmosféru tohoto úchvatného města a využít tak celoroční možnost ochutnat lázeňské prameny nebo se vykoupat přímo v bazénu s termální vodou. Navštívit rovněž můžete jedinečný Vánoční dům a nebo Motýlí dům, který je umístěn na vyhlídce Diana. V zimě můžete využít nedaleké sjezdovky na Klínovci, zažít vánoční atmosféru na místních vánočních trzích, v létě pak nespočetné množství turistických tras a kulturních akcí, například celosvětově známý Filmový festival."
+
+#: .\templates\home.html:18
+msgid "Prohlédněte si náš apartmán"
+msgstr "Prohlédněte si náš apartmán"
+
+#: .\templates\home.html:21
+msgid "Celý apartmán"
+msgstr "Celý apartmán"
+
+#: .\templates\home.html:24
+msgid "Výhled z apartmánu"
+msgstr "Výhled z apartmánu"
+
+#: .\templates\home.html:30
+msgid "Prohlédněte si naše apartmány ve videu"
+msgstr "Prohlédněte si naše apartmány ve videu"
+
+#: .\templates\home.html:33
+msgid "Váš prohlížeč nepodporuje HTML5 video."
+msgstr "Váš prohlížeč nepodporuje HTML5 video."
+
+#: .\templates\home.html:39
+msgid "Rezervujte svůj pobyt"
+msgstr "Rezervujte svůj pobyt"
+
+#: .\templates\home.html:40
+msgid "Rezervovat nyní"
+msgstr "Rezervovat nyní"
+
+#: .\templates\home.html:44
+msgid "Naše pokoje"
+msgstr "Naše pokoje"
+
+#: .\templates\home.html:53 .\templates\rooms\room_list.html:24
+msgid "Více informací"
+msgstr "Více informací"
+
+#: .\templates\rooms\reservation.html:5
+msgid "Rezervace ubytování"
+msgstr "Rezervace ubytování"
+
+#: .\templates\rooms\room_detail.html:23
+msgid "Popis"
+msgstr "Popis"
+
+#: .\templates\rooms\room_detail.html:25
+msgid "Kapacita"
+msgstr "Kapacita"
+
+#: .\templates\rooms\room_detail.html:25
+msgid "osob"
+msgstr "osob"
+
+#: .\templates\rooms\room_detail.html:29
+msgid "Galerie"
+msgstr "Galerie"
+
+#: .\templates\rooms\room_detail.html:39
+msgid "Žádné další obrázky nejsou k dispozici."
+msgstr "Žádné další obrázky nejsou k dispozici."
+
+#: .\templates\rooms\room_detail.html:46
+msgid "Rezervovat tento pokoj"
+msgstr "Rezervovat tento pokoj"
+
+#: .\templates\rooms\room_list.html:6 .\templates\rooms\room_list.html:11
+msgid "Seznam pokojů"
+msgstr "Seznam pokojů"
+
+#: .\templates\rooms\room_list.html:19
+msgid "Výchozí obrázek"
+msgstr "Výchozí obrázek"
+
+#: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
+msgid "Messages"
+msgstr "Zprávy"
+
+#: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:8
+msgid "Site Maps"
+msgstr "Sitemapy"
+
+#: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:9
+msgid "Static Files"
+msgstr "Statické soubory"
+
+#: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
+msgid "Syndication"
+msgstr "Syndikace"
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: .\venv\Lib\site-packages\django\core\paginator.py:30
+msgid "…"
+msgstr "…"
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:32
+msgid "That page number is not an integer"
+msgstr "Toto číslo stránky není celé číslo"
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:33
+msgid "That page number is less than 1"
+msgstr "Toto číslo stránky je menší než 1"
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:34
+msgid "That page contains no results"
+msgstr "Tato stránka neobsahuje žádné výsledky"
+
+# pokračování dle potřeby

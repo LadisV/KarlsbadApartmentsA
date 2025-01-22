@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(r_t_7n1dz4g=!fz&fb+khg0hypav=h4*#y!clde!%$_z5qy&^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['karlsbad-apartments.cz', 'www.karlsbad-apartments.cz']
 
 
 # Application definition
@@ -38,11 +39,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rooms',
+    'parler',
+    'django.contrib.sitemaps',
+    'django.contrib.sites',
+    'pytest_django',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -64,6 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n'
             ],
         },
     },
@@ -78,7 +86,11 @@ WSGI_APPLICATION = 'KarlsbadApartmentsA.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'new_db.sqlite3',  # Nová databáze
+    },
+    'db': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',  # Stará databáze
     }
 }
 
@@ -111,6 +123,8 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
 
 
@@ -129,3 +143,32 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LANGUAGES = [
+    ('cs', _('Czech')),
+    ('en', _('English')),
+    ('de', _('German')),
+    ('ru', _('Russian')),
+]
+
+LOCALE_PATHS = [BASE_DIR / 'locale']
+
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'cs', 'name': _('Czech')},
+        {'code': 'en', 'name': _('English')},
+        {'code': 'de', 'name': _('German')},
+        {'code': 'ru', 'name': _('Russian')},
+    ),
+    'default': {
+        'fallbacks': ['cs'],
+        'hide_untranslated': False,
+    }
+}
+
+FLAG_MAP = {
+    'cs': 'cz',
+    'en': 'gb',
+    'de': 'de',
+    'ru': 'ru',
+}

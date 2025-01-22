@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}  <!-- Načtení tagu pro překlad -->
 
 {% block title %}
-Seznam pokojů - Karlsbad Apartments
+{% trans "Seznam pokojů" %} - Karlsbad Apartments
 {% endblock %}
 
 {% block content %}
 <div class="container my-5">
-    <h1 class="text-center">Seznam pokojů</h1>
+    <h1 class="text-center">{% trans "Seznam pokojů" %}</h1>
     <div class="row">
         {% for room in rooms %}
         <div class="col-md-4 mb-4">
@@ -15,12 +16,12 @@ Seznam pokojů - Karlsbad Apartments
                 {% if room.image %}
                 <img src="{{ room.image.url }}" class="card-img-top" alt="{{ room.name }}">
                 {% else %}
-                <img src="{% static 'images/default-room.jpg' %}" class="card-img-top" alt="Výchozí obrázek">
+                <img src="{% static 'images/default-room.jpg' %}" class="card-img-top" alt="{% trans "Výchozí obrázek" %}">
                 {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ room.name }}</h5>
                     <p class="card-text">{{ room.description|truncatewords:10 }}</p>
-                    <a href="{% url 'room_detail' room.id %}" class="btn btn-primary">Více informací</a>
+                    <a href="{% url 'room_detail' room.id %}" class="btn btn-primary">{% trans "Více informací" %}</a>
                 </div>
             </div>
         </div>

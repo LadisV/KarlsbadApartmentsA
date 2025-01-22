@@ -1,11 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}
 {{ room.name }} - Karlsbad Apartments
 {% endblock %}
 
 {% block content %}
+<!-- Přidání Lightbox CSS a JS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
 <div class="container my-5">
     <h1 class="text-center mb-4" style="font-family: 'Playfair Display', serif; font-size: 3rem;">{{ room.name }}</h1>
     <div class="row mb-4">
@@ -19,13 +24,13 @@
 
     <div class="row mb-5">
         <div class="col-lg-12">
-            <h2 class="mb-3" style="font-family: 'Playfair Display', serif; color: #A37D58;">Popis</h2>
+            <h2 class="mb-3" style="font-family: 'Playfair Display', serif; color: #A37D58;">{% trans "Popis" %}</h2>
             <p style="font-size: 1.2rem; line-height: 1.6;">{{ room.description }}</p>
-            <p style="font-weight: bold; font-size: 1.1rem;">Kapacita: {{ room.capacity }} osob</p>
+            <p style="font-weight: bold; font-size: 1.1rem;">{% trans "Kapacita" %}: {{ room.capacity }} {% trans "osob" %}</p>
         </div>
     </div>
 
-    <h3 class="text-center mb-4" style="font-family: 'Playfair Display', serif; color: #A37D58;">Galerie</h3>
+    <h3 class="text-center mb-4" style="font-family: 'Playfair Display', serif; color: #A37D58;">{% trans "Galerie" %}</h3>
     <div class="row">
         {% for image in room.images.all %}
         <div class="col-md-4 col-6 mb-3 text-center">
@@ -35,15 +40,22 @@
             </a>
         </div>
         {% empty %}
-        <p class="text-center">Žádné další obrázky nejsou k dispozici.</p>
+        <p class="text-center">{% trans "Žádné další obrázky nejsou k dispozici." %}</p>
         {% endfor %}
     </div>
 
     <div class="text-center my-5">
-        <a href="{% url 'reserve_room' room.id %}" class="btn btn-lg"
-           style="background-color: #A37D58; color: white; font-size: 1.2rem; padding: 10px 30px;">
-            Rezervovat tento pokoj
-        </a>
+        <h3 style="font-family: 'Playfair Display', serif; color: #A37D58;">{% trans "Rezervovat tento pokoj" %}</h3>
+        <div class="previo-reservation-form">
+            <iframe 
+                src="https://booking.previo.app/?hotId=783537&roomTypeId={{ room.previo_id }}&lang=cs" 
+                scrolling="no" 
+                frameborder="0" 
+                width="100%" 
+                height="800px" 
+                allowTransparency="true">
+            </iframe>
+        </div>
     </div>
 </div>
 {% endblock %}

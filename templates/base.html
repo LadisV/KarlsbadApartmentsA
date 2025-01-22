@@ -1,54 +1,97 @@
 {% load static %}
+{% load i18n %} <!-- Načtení tagu pro překlad -->
 
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Karlsbad Apartments{% endblock %}</title>
+    
+    <!-- SEO Meta tagy -->
+    <meta name="description" content="{% trans 'Karlsbad Apartments nabízí útulné a plně vybavené apartmány v lázeňské části Karlových Varů, ideální pro páry i rodiny s dětmi.' %}">
+    <meta name="keywords" content="{% trans 'Karlsbad Apartments, ubytování Karlovy Vary, apartmány Karlovy Vary, pronájem apartmánů, lázeňské ubytování, rodinné ubytování' %}">
+    <meta name="author" content="Karlsbad Apartments">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="{% block seo_title %}{% trans 'Karlsbad Apartments' %}{% endblock %}">
+    <meta property="og:description" content="{% trans 'Karlsbad Apartments nabízí útulné a plně vybavené apartmány v lázeňské části Karlových Varů, ideální pro páry i rodiny s dětmi.' %}">
+    <meta property="og:image" content="{% static 'images/logo.jpg' %}">
+    <meta property="og:url" content="https://www.karlsbadapartments.cz">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% trans 'Karlsbad Apartments' %}">
+    <meta name="twitter:description" content="{% trans 'Karlsbad Apartments nabízí útulné a plně vybavené apartmány v lázeňské části Karlových Varů.' %}">
+    <meta name="twitter:image" content="{% static 'images/logo.jpg' %}">
+
+    <!-- Titulek stránky -->
+    <title>{% block title %}{% trans "Karlsbad Apartments" %}{% endblock %}</title>
+    
+    <!-- CSS a favicon -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
 </head>
 <body>
     <!-- Horní navbar -->
     <nav class="navbar navbar-top py-2">
         <div class="container d-flex justify-content-between">
             <span class="navbar-text">
-                <a href="mailto:karlsbad_apartments@email.cz">karlsbad_apartments@email.cz</a> | +420 720 487 825
+                <a href="mailto:karlsbad_apartments@email.cz">{% trans "karlsbad_apartments@email.cz" %}</a> | +420 720 487 825
             </span>
             <ul class="navbar-nav ms-auto d-flex flex-row align-items-center">
                 <!-- Jazyková nabídka -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownLang" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{% static 'images/flags/cz.png' %}" alt="Čeština" class="me-2" style="width: 20px; height: 14px;">
-                        Čeština
+                        {% if LANGUAGE_CODE == "cs" %}
+                            <img src="{% static 'images/flags/cz.png' %}" alt="Čeština" class="me-2" style="width: 30px; height: 21px;">
+                        {% elif LANGUAGE_CODE == "en" %}
+                            <img src="{% static 'images/flags/gb.png' %}" alt="English" class="me-2" style="width: 30px; height: 21px;">
+                        {% elif LANGUAGE_CODE == "de" %}
+                            <img src="{% static 'images/flags/de.png' %}" alt="Deutsch" class="me-2" style="width: 30px; height: 21px;">
+                        {% elif LANGUAGE_CODE == "ru" %}
+                            <img src="{% static 'images/flags/ru.png' %}" alt="Русский" class="me-2" style="width: 30px; height: 21px;">
+                        {% endif %}
+                        {% get_current_language as current_language %}
+                        {{ current_language|capfirst }}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownLang">
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <img src="{% static 'images/flags/cz.png' %}" alt="Čeština" class="me-2" style="width: 20px; height: 14px;">
-                                Čeština
-                            </a>
+                            <form method="post" action="{% url 'set_language' %}">
+                                {% csrf_token %}
+                                <button class="dropdown-item d-flex align-items-center" name="language" value="cs">
+                                    <img src="{% static 'images/flags/cz.png' %}" alt="Čeština" class="me-2" style="width: 20px; height: 14px;">
+                                    Čeština
+                                </button>
+                            </form>
                         </li>
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <img src="{% static 'images/flags/gb.png' %}" alt="Angličtina" class="me-2" style="width: 20px; height: 14px;">
-                                Angličtina
-                            </a>
+                            <form method="post" action="{% url 'set_language' %}">
+                                {% csrf_token %}
+                                <button class="dropdown-item d-flex align-items-center" name="language" value="en">
+                                    <img src="{% static 'images/flags/gb.png' %}" alt="English" class="me-2" style="width: 20px; height: 14px;">
+                                    English
+                                </button>
+                            </form>
                         </li>
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <img src="{% static 'images/flags/de.png' %}" alt="Němčina" class="me-2" style="width: 20px; height: 14px;">
-                                Němčina
-                            </a>
+                            <form method="post" action="{% url 'set_language' %}">
+                                {% csrf_token %}
+                                <button class="dropdown-item d-flex align-items-center" name="language" value="de">
+                                    <img src="{% static 'images/flags/de.png' %}" alt="Deutsch" class="me-2" style="width: 20px; height: 14px;">
+                                    Deutsch
+                                </button>
+                            </form>
                         </li>
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <img src="{% static 'images/flags/ru.png' %}" alt="Ruština" class="me-2" style="width: 20px; height: 14px;">
-                                Ruština
-                            </a>
+                            <form method="post" action="{% url 'set_language' %}">
+                                {% csrf_token %}
+                                <button class="dropdown-item d-flex align-items-center" name="language" value="ru">
+                                    <img src="{% static 'images/flags/ru.png' %}" alt="Русский" class="me-2" style="width: 20px; height: 14px;">
+                                    Русский
+                                </button>
+                            </form>
                         </li>
                     </ul>
                 </li>
@@ -62,22 +105,22 @@
             <a class="navbar-brand d-flex align-items-center me-4" href="{% url 'home' %}">
                 <img src="{% static 'images/logo.jpg' %}" alt="Logo" class="logo-img" style="height: 50px;">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="{% trans 'Toggle navigation' %}">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'home' %}">Domů</a>
+                        <a class="nav-link" href="{% url 'home' %}">{% trans "Domů" %}</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'reservation' %}">Rezervace</a>
+                        <a class="nav-link" href="{% url 'reservation' %}">{% trans "Rezervace" %}</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'room_list' %}">Pokoje</a>
+                        <a class="nav-link" href="{% url 'room_list' %}">{% trans "Pokoje" %}</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'contact' %}">Kontakt</a>
+                        <a class="nav-link" href="{% url 'contact' %}">{% trans "Kontakt" %}</a>
                     </li>
                 </ul>
             </div>
@@ -91,9 +134,18 @@
 
     <!-- Patička -->
     <footer class="text-center text-white" style="background-color: #CF8140; padding: 10px;">
-        <p>&copy; 2024 Karlsbad Apartments. Všechna práva vyhrazena.</p>
+        <p>&copy; 2024 Karlsbad Apartments. {% trans "Všechna práva vyhrazena" %}.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lightbox.js' %}"></script>
+    <script>
+        lightbox.option({
+            'albumLabel': "Obrázek %1 z %2",
+            'fadeDuration': 200,
+            'resizeDuration': 200,
+            'wrapAround': true
+        });
+    </script>
 </body>
 </html>

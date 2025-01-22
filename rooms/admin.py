@@ -1,18 +1,34 @@
 from django.contrib import admin
+from parler.admin import TranslatableAdmin
 from .models import Room, Reservation, RoomImage
+from django.utils.html import format_html
+
 
 # Inline admin pro nahrávání více obrázků k jednomu pokoji
 class RoomImageInline(admin.TabularInline):
-    model = RoomImage  # Model pro obrázky
-    extra = 1  # Kolik polí pro nové obrázky se má zobrazit
+    model = RoomImage
+    extra = 1
+    readonly_fields = ('image_preview',)
 
-# Konfigurace adminu pro model Room
-class RoomAdmin(admin.ModelAdmin):
-    inlines = [RoomImageInline]  # Přidání inline obrázků k pokoji
-    list_display = ('name', 'capacity')  # Sloupce v seznamu pokojů
-    search_fields = ('name',)  # Hledání podle názvu
+    def image_preview(self, obj):
+        if obj.image:
+            return format_html('<img src="{}" style="width: 100px; height: auto;" />', obj.image.url)
+        return ""
+    image_preview.short_description = "Náhled obrázku"
 
-# Registrace modelů
-admin.site.register(Room, RoomAdmin)
-admin.site.register(Reservation)
-admin.site.register(RoomImage)
+
+# Konfigurace adminu pro model Room s podporou překladu
+@admin.register(Room)
+class RoomAdmin(TranslatableAdmin):
+    inlines = [RoomImageInline]
+    list_display = ('name', 'capacity')
+    search_fields = ('translations__name',)
+    list_filter = ('capacity',)
+
+
+# Konfigurace adminu pro rezervace
+@admin.register(Reservation)
+class ReservationAdmin(admin.ModelAdmin):
+    list_display = ('customer_name', 'room', 'check_in_date', 'check_out_date', 'payment_status')
+    list_filter = ('payment_status', 'check_in_date', 'check_out_date')
+    search_fields = ('customer_name', 'customer_email', 'customer_phone')

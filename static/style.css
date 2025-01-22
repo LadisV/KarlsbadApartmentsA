@@ -140,6 +140,18 @@ footer a:hover {
     color: #020202;
 }
 
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Zarovnání karet na střed */
+    gap: 20px; /* Mezera mezi kartami */
+}
+
+.card-container .card {
+    flex: 0 1 calc(33.333% - 20px); /* Karty budou zabírat třetinu šířky s mezerou */
+    box-sizing: border-box;
+}
+
 /* Formuláře */
 form input,
 form textarea {
@@ -223,5 +235,17 @@ form .btn-primary:hover {
 
     .card-title {
         font-size: 18px; /* Menší nadpisy karet */
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container .card {
+        flex: 0 1 calc(50% - 20px); /* Na menších obrazovkách karty zabírají polovinu šířky */
+    }
+}
+
+@media (max-width: 576px) {
+    .card-container .card {
+        flex: 0 1 calc(100% - 20px); /* Na mobilních zařízeních karty zabírají celou šířku */
     }
 }

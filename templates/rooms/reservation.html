@@ -1,7 +1,8 @@
 {% extends "base.html" %}
+{% load i18n %}  <!-- Načtení tagu pro překlad -->
 
 {% block content %}
-    <h1>Rezervace ubytování</h1>
+    <h1 class="text-center mb-4" style="font-family: 'Playfair Display', serif;">{% trans "Rezervace ubytování" %}</h1>
     <div class="previo-reservation-form">
         <script type="text/javascript" src="https://booking.previo.app/iframe/"></script>
         <iframe src="https://booking.previo.app/?hotId=783537&lang=cs&hideTabs=occupancy" 
@@ -11,6 +12,7 @@
                 height="2000" 
                 name="previo-booking-iframe" 
                 id="previo-booking-iframe" 
-                allowTransparency="true"></iframe>
+                allowTransparency="true">
+        </iframe>
     </div>
 {% endblock %}

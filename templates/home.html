@@ -1,50 +1,59 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}  <!-- Načtení tagu pro překlad -->
 
 {% block title %}
-Domů - Karlsbad Apartments
+{% trans "Domů - Karlsbad Apartments" %}
 {% endblock %}
 
 {% block content %}
 <div class="container my-5">
+    <!-- Úvodní sekce -->
     <section class="text-center mb-5">
-        <h1 style="font-family: 'Playfair Display', serif;">Vítejte na stránkách Karlsbad Apartments</h1>
-        <p>Útulně zařízené apartmány s unikátní polohou, v lázeňské části Karlových Varů, jen pár minut chůze od hlavní Mlýnské kolonády a Vřídla. Určeny jsou jak pro páry, tak i pro rodiny s dětmi. V našem ubytování jsou povoleni a vítání i domácí mazlíčci. 
-Nabízíme plně vybavené dvoulůžkové a čtyřlůžkové apartmány.
-Přijeďte si k nám vychutnat příjemnou atmosféru tohoto úchvatného města a využít tak celoroční možnost ochutnat lázeňské prameny nebo se vykoupat přímo v bazénu s termální vodou. Navštívit rovněž můžete jedinečný Vánoční dům a nebo Motýlí dům, který je umístěn na vyhlídce Diana. V zimě můžete využít nedaleké sjezdovky na Klínovci, zažít vánoční atmosféru na místních vánočních trzích, v létě pak nespočetné množství turistických tras a kulturních akcí, například celosvětově známý Filmový festival.</p>
+        <h1 style="font-family: 'Playfair Display', serif;">{% trans "Vítejte na stránkách Karlsbad Apartments" %}</h1>
+        <p>{% trans "Útulně zařízené apartmány s unikátní polohou, v lázeňské části Karlových Varů, jen pár minut chůze od hlavní Mlýnské kolonády a Vřídla. Určeny jsou jak pro páry, tak i pro rodiny s dětmi. V našem ubytování jsou povoleni a vítání i domácí mazlíčci. Nabízíme plně vybavené dvoulůžkové a čtyřlůžkové apartmány. Přijeďte si k nám vychutnat příjemnou atmosféru tohoto úchvatného města a využít tak celoroční možnost ochutnat lázeňské prameny nebo se vykoupat přímo v bazénu s termální vodou. Navštívit rovněž můžete jedinečný Vánoční dům a nebo Motýlí dům, který je umístěn na vyhlídce Diana. V zimě můžete využít nedaleké sjezdovky na Klínovci, zažít vánoční atmosféru na místních vánočních trzích, v létě pak nespočetné množství turistických tras a kulturních akcí, například celosvětově známý Filmový festival." %}</p>
     </section>
 
-    <section class="mb-5">
-        <h2 class="text-center" style="font-family: 'Playfair Display', serif;">Prohlédněte si náš apartmán</h2>
+    <!-- Sekce: Rezervace -->
+    <section class="text-center mb-5">
+        <h2 style="font-family: 'Playfair Display', serif;">{% trans "Rezervujte svůj pobyt" %}</h2>
+        <a href="{% url 'reservation' %}" class="btn-reservace">{% trans "Rezervovat nyní" %}</a>
+    </section>
+
+    <!-- Sekce: Prohlédněte si apartmány -->
+    <section class="text-center mb-5">
+        <h2 style="font-family: 'Playfair Display', serif;">{% trans "Prohlédněte si náš apartmán" %}</h2>
         <div class="row">
             <div class="col-md-6">
-                <img src="{% static 'images/1.jpg' %}" class="img-fluid rounded" alt="Celý apartmán">
+                <img src="{% static 'images/1.jpg' %}" class="img-fluid rounded" alt="{% trans "Celý apartmán" %}">
             </div>
             <div class="col-md-6">
-                <img src="{% static 'images/2.jpg' %}" class="img-fluid rounded" alt="Výhled z apartmánu">
+                <img src="{% static 'images/2.jpg' %}" class="img-fluid rounded" alt="{% trans "Výhled z apartmánu" %}">
             </div>
         </div>
     </section>
 
+    <!-- Sekce: Video -->
     <section class="text-center mb-5">
-        <h2 style="font-family: 'Playfair Display', serif;">Prohlédněte si naše apartmány ve videu</h2>
+        <h2 style="font-family: 'Playfair Display', serif;">{% trans "Prohlédněte si naše apartmány ve videu" %}</h2>
         <video controls width="100%" style="max-width: 800px;">
             <source src="{% static 'videos/prohlidka.mp4' %}" type="video/mp4">
-            Váš prohlížeč nepodporuje HTML5 video.
+            {% trans "Váš prohlížeč nepodporuje HTML5 video." %}
         </video>
     </section>
 
+    <!-- Sekce: Naše pokoje -->
     <section>
-        <h2 class="text-center" style="font-family: 'Playfair Display', serif;">Naše pokoje</h2>
-        <div class="row">
+        <h2 class="text-center mb-4" style="font-family: 'Playfair Display', serif;">{% trans "Naše pokoje" %}</h2>
+        <div class="row justify-content-center">
             {% for room in rooms %}
-            <div class="col-md-4 mb-4">
+            <div class="col-md-4 mb-4 d-flex align-items-stretch">
                 <div class="card" style="background-color: #F3DDCAFF; border: none;">
-                    <img src="{{ room.image.url }}" class="card-img-top" alt="{{ room.name }}">
+                    <img src="{% if room.image %}{{ room.image.url }}{% else %}{% static 'images/default_image.jpg' %}{% endif %}" class="card-img-top" alt="{{ room.name }}">
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ room.name }}</h5>
-                        <p class="card-text">{{ room.description|truncatewords:10 }}</p>
-                        <a href="{% url 'room_detail' room.id %}" class="btn text-white" style="background-color: #CF8140;">Více informací</a>
+                        <p class="card-text">{{ room.description|default:"Bez popisu" }}</p>
+                        <a href="{% url 'room_detail' room.id %}" class="btn text-white" style="background-color: #CF8140;">{% trans "Více informací" %}</a>
                     </div>
                 </div>
             </div>
