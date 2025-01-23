@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-(r_t_7n1dz4g=!fz&fb+khg0hypav=h4*#y!clde!%$_z5qy&^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['karlsbad-apartments.cz', 'www.karlsbad-apartments.cz']
+ALLOWED_HOSTS = ['karlsbad-apartments.cz', 'www.karlsbad-apartments.cz', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -87,10 +87,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'new_db.sqlite3',  # Nová databáze
-    },
-    'db': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',  # Stará databáze
     }
 }
 
@@ -172,3 +168,6 @@ FLAG_MAP = {
     'de': 'de',
     'ru': 'ru',
 }
+
+X_FRAME_OPTIONS = 'ALLOWALL'
+

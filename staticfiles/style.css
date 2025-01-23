@@ -1,3 +1,4 @@
+/* Základní nastavení */
 body {
     background-color: #F3DDCAFF;
     font-family: Arial, sans-serif;
@@ -10,38 +11,104 @@ img {
     cursor: pointer;
 }
 
-.navbar {
-    background-color: #D2957A;
-    padding: 20px 0;
+/* Horní navbar */
+.navbar-top {
+    background-color: #c56854; /* Tmavší odstín */
+    color: #FFFFFF;
+    padding: 5px 0; /* Zajištění pevné výšky */
 }
 
+.navbar-top .navbar-text {
+    margin: 0;
+    line-height: 1.5; /* Zarovnání textu na střed */
+}
+
+.navbar-top .navbar-text a {
+    color: #FFFFFF !important;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.navbar-top .navbar-text a:hover {
+    text-decoration: underline !important;
+}
+
+/* Dropdown menu */
+.navbar-top .dropdown-menu {
+    position: absolute; /* Odpojení od toku dokumentu */
+    top: 100%; /* Menu pod navbar */
+    left: auto;
+    right: 0; /* Zarovnání doprava */
+    z-index: 1050; /* Zajištění překrytí */
+    display: none; /* Skrytí menu */
+    background-color: #c56854; /* Barva pozadí menu */
+    border: none;
+    padding: 0;
+}
+
+.navbar-top .dropdown:hover .dropdown-menu {
+    display: block; /* Zobrazí menu při hoveru */
+}
+
+.navbar-top .dropdown-item {
+    color: #FFFFFF;
+    padding: 8px 15px;
+    text-align: left;
+}
+
+.navbar-top .dropdown-item:hover {
+    background-color: #a54a33; /* Zvýraznění při hoveru */
+}
+
+/* Hlavní navbar */
+.navbar-main {
+    background-color: #CF8140 !important; /* Stejná barva jako patička */
+    color: #0e0e0e;
+    padding: 10px 0;
+}
+
+.navbar-main .nav-link {
+    color: #000000 !important;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.navbar-main .nav-link:hover {
+    text-decoration: underline !important;
+}
+
+/* Logo */
 .navbar-brand {
     font-family: 'Brush Script MT', cursive;
     font-size: 50px;
     color: #000000;
-    text-align: center;
 }
 
-.navbar-nav .nav-link {
-    color: #000000;
-    font-weight: bold;
-    font-size: 18px;
-    margin: 0 15px;
-    text-transform: uppercase;
+.dropdown-item img {
+    margin-right: 8px;
+    border-radius: 2px;
 }
 
-.navbar-nav .nav-link:hover {
-    text-decoration: underline;
-}
-
+/* Patička */
 footer {
-    background-color: #D2957A;
+    background-color: #CF8140;
     color: #FFFFFF;
     text-align: center;
     padding: 10px 0;
     font-size: 14px;
 }
 
+footer a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Karty */
 .card {
     background-color: #F3DDCAFF;
     border: none;
@@ -60,19 +127,32 @@ footer {
 }
 
 .card .btn-primary {
-    background-color: #D2957A;
+    background-color: #CF8140;
     border: none;
-    color: #FFFFFF;
+    color: #0c0c0c;
     font-weight: bold;
     border-radius: 20px;
     padding: 10px 20px;
 }
 
 .card .btn-primary:hover {
-    background-color: #C47F65;
-    color: #FFFFFF;
+    background-color: #b36f35;
+    color: #020202;
 }
 
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Zarovnání karet na střed */
+    gap: 20px; /* Mezera mezi kartami */
+}
+
+.card-container .card {
+    flex: 0 1 calc(33.333% - 20px); /* Karty budou zabírat třetinu šířky s mezerou */
+    box-sizing: border-box;
+}
+
+/* Formuláře */
 form input,
 form textarea {
     background-color: #F3DDCAFF;
@@ -91,19 +171,20 @@ form textarea:focus {
 }
 
 form .btn-primary {
-    background-color: #D2957A;
+    background-color: #CF8140;
     border: none;
-    color: #FFFFFF;
+    color: #0e0e0e;
     font-weight: bold;
     border-radius: 20px;
     padding: 10px 20px;
 }
 
 form .btn-primary:hover {
-    background-color: #C47F65;
+    background-color: #b36f35;
     color: #FFFFFF;
 }
 
+/* Rezervace tlačítko */
 .btn-reservace {
     background-color: #CF8140;
     color: white;
@@ -118,6 +199,7 @@ form .btn-primary:hover {
     color: white;
 }
 
+/* Lightbox */
 .lightboxOverlay {
     background-color: rgba(0, 0, 0, 0.8) !important;
 }
@@ -127,41 +209,43 @@ form .btn-primary:hover {
     max-height: 90vh !important;
 }
 
-.lb-nav a.lb-prev, .lb-nav a.lb-next {
-    width: 50px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    cursor: pointer;
-    opacity: 1;
-    transition: opacity 0.2s ease-in-out;
+/* Responsivita */
+@media (max-width: 576px) {
+    .navbar-brand img {
+        height: 40px; /* Menší logo */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 14px; /* Menší text v navigaci */
+    }
+
+    .card {
+        margin-bottom: 20px; /* Více místa mezi kartami */
+    }
+
+    .container {
+        padding: 10px; /* Menší odsazení na okrajích */
+    }
 }
 
-.lb-nav a.lb-prev {
-    left: 0;
-    background: url('../images/prev.png') center left no-repeat;
-    background-size: 30px 30px;
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 45px;
+    }
+
+    .card-title {
+        font-size: 18px; /* Menší nadpisy karet */
+    }
 }
 
-.lb-nav a.lb-next {
-    right: 0;
-    background: url('../images/next.png') center right no-repeat;
-    background-size: 30px 30px;
+@media (max-width: 768px) {
+    .card-container .card {
+        flex: 0 1 calc(50% - 20px); /* Na menších obrazovkách karty zabírají polovinu šířky */
+    }
 }
 
-.lb-nav a.lb-prev:hover,
-.lb-nav a.lb-next:hover {
-    opacity: 0.8;
-}
-
-.lb-data .lb-close {
-    background: url('../images/close.png') top right no-repeat;
-    width: 30px;
-    height: 30px;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-}
-
-.lb-data .lb-close:hover {
-    opacity: 1;
+@media (max-width: 576px) {
+    .card-container .card {
+        flex: 0 1 calc(100% - 20px); /* Na mobilních zařízeních karty zabírají celou šířku */
+    }
 }
