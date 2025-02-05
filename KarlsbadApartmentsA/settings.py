@@ -171,3 +171,8 @@ FLAG_MAP = {
 
 X_FRAME_OPTIONS = 'ALLOWALL'
 
+MIME_TYPES = {
+    'css': 'text/css',
+    'js': 'application/javascript',
+    'html': 'text/html',
+}

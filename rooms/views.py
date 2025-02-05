@@ -92,3 +92,10 @@ def custom_permission_denied(request, exception):
 
 def custom_bad_request(request, exception):
     return render(request, '400.html', status=400)
+
+
+def terms(request):
+    return render(request, "terms.html")
+
+def privacy(request):
+    return render(request, "privacy.html")

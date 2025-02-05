@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Zásady zpracování osobních údajů" %}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>{% trans "Zásady zpracování osobních údajů" %}</h1>
+    <p>
+        {% trans "Tyto zásady popisují, jakým způsobem zpracováváme vaše osobní údaje v souladu s Obecným nařízením o ochraně osobních údajů (GDPR)." %}
+    </p>
+
+    <h2>{% trans "Kdo je správcem vašich údajů?" %}</h2>
+    <p>
+        {% trans "Správcem vašich osobních údajů je provozovatel stránek " %}
+        <strong>Karlsbad Apartments</strong>, {% trans "se sídlem v Karlových Varech. Kontaktovat nás můžete na e-mailu" %}
+        <a href="mailto:karlsbad_apartments@email.cz">karlsbad_apartments@email.cz</a>.
+    </p>
+
+    <h2>{% trans "Jaké údaje zpracováváme?" %}</h2>
+    <p>
+        {% trans "Zpracováváme údaje, které nám poskytnete prostřednictvím rezervačního systému Previo a kontaktního formuláře, jako například vaše jméno, e-mailovou adresu, telefonní číslo a další informace nezbytné pro zajištění rezervace nebo komunikaci." %}
+    </p>
+
+    <h2>{% trans "Za jakým účelem údaje zpracováváme?" %}</h2>
+    <ul>
+        <li>{% trans "Zajištění a správa rezervací ubytování" %}</li>
+        <li>{% trans "Komunikace s hosty a vyřízení jejich dotazů" %}</li>
+        <li>{% trans "Plnění zákonných povinností (např. vedení účetnictví)" %}</li>
+    </ul>
+
+    <h2>{% trans "Jak dlouho údaje uchováváme?" %}</h2>
+    <p>
+        {% trans "Vaše osobní údaje uchováváme pouze po dobu nezbytně nutnou pro splnění účelu, pro který byly shromážděny, nebo po dobu stanovenou právními předpisy." %}
+    </p>
+
+    <h2>{% trans "Komu mohou být údaje zpřístupněny?" %}</h2>
+    <p>
+        {% trans "Vaše údaje mohou být zpřístupněny našim smluvním partnerům, jako je poskytovatel rezervačního systému Previo nebo účetní společnosti, a to pouze v rozsahu nutném pro plnění smluvních a zákonných povinností." %}
+    </p>
+
+    <h2>{% trans "Jaká máte práva?" %}</h2>
+    <p>
+        {% trans "Máte právo na přístup k vašim údajům, jejich opravu nebo výmaz, omezení zpracování, vznesení námitky proti zpracování a přenositelnost údajů. Pokud se domníváte, že vaše práva byla porušena, máte právo podat stížnost u dozorového úřadu (Úřad pro ochranu osobních údajů)." %}
+    </p>
+
+    <h2>{% trans "Jak chráníme vaše údaje?" %}</h2>
+    <p>
+        {% trans "Používáme odpovídající technická a organizační opatření k ochraně osobních údajů před neoprávněným přístupem, ztrátou nebo zneužitím. Přístup k osobním údajům mají pouze oprávněné osoby a naši smluvní partneři, kteří se zavázali k ochraně údajů." %}
+    </p>
+
+    <h2>{% trans "Cookies" %}</h2>
+    <p>
+        {% trans "Naše webové stránky používají soubory cookies pro zlepšení uživatelského prostředí a analýzu návštěvnosti. Používáním našich stránek souhlasíte s používáním cookies." %}
+    </p>
+
+    <h2>{% trans "Kontakty" %}</h2>
+    <p>
+        {% trans "Pokud máte jakékoliv dotazy nebo požadavky týkající se zpracování vašich osobních údajů, kontaktujte nás na e-mailové adrese" %}
+        <a href="mailto:karlsbad_apartments@email.cz">karlsbad_apartments@email.cz</a>.
+    </p>
+</div>
+{% endblock %}

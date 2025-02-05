@@ -13,8 +13,8 @@ img {
 
 /* Horní navbar */
 .navbar-top {
-    background-color: #c56854; /* Tmavší odstín */
-    color: #FFFFFF;
+    background-color: #f3ddca; /* Tmavší odstín */
+    color: #070707;
     padding: 5px 0; /* Zajištění pevné výšky */
 }
 
@@ -24,7 +24,7 @@ img {
 }
 
 .navbar-top .navbar-text a {
-    color: #FFFFFF !important;
+    color: #0b0b0b !important;
     text-decoration: none;
     font-size: 14px;
 }
@@ -41,7 +41,7 @@ img {
     right: 0; /* Zarovnání doprava */
     z-index: 1050; /* Zajištění překrytí */
     display: none; /* Skrytí menu */
-    background-color: #c56854; /* Barva pozadí menu */
+    background-color: #f3ddca; /* Barva pozadí menu */
     border: none;
     padding: 0;
 }
@@ -57,7 +57,7 @@ img {
 }
 
 .navbar-top .dropdown-item:hover {
-    background-color: #a54a33; /* Zvýraznění při hoveru */
+    background-color: #f3ddca; /* Zvýraznění při hoveru */
 }
 
 /* Hlavní navbar */

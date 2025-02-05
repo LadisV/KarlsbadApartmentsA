@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Obchodní podmínky" %}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>{% trans "Obchodní podmínky" %}</h1>
+    <p>{% trans "Tyto obchodní podmínky platí pro služby poskytované Karlsbad Apartments." %}</p>
+
+    <h2>{% trans "1. Úvodní ustanovení" %}</h2>
+    <p>{% trans "Tento dokument stanovuje pravidla a podmínky využívání ubytovacích služeb." %}</p>
+
+    <h2>{% trans "2. Rezervace a platby" %}</h2>
+    <p>{% trans "Rezervace probíhá přes systém Previo. Platba může být provedena online nebo na místě." %}</p>
+
+    <h2>{% trans "3. Storno podmínky" %}</h2>
+    <p>{% trans "Hosté mohou rezervaci zrušit dle podmínek uvedených při rezervaci." %}</p>
+</div>
+{% endblock %}

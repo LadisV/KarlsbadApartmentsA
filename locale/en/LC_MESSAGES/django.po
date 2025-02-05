@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-21 16:56+0100\n"
+"POT-Creation-Date: 2025-02-05 20:26+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,67 +18,104 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\KarlsbadApartmentsA\settings.py:143 .\KarlsbadApartmentsA\settings.py:153
+#: .\KarlsbadApartmentsA\settings.py:144 .\KarlsbadApartmentsA\settings.py:154
 msgid "Czech"
 msgstr "Czech"
 
-#: .\KarlsbadApartmentsA\settings.py:144 .\KarlsbadApartmentsA\settings.py:154
+#: .\KarlsbadApartmentsA\settings.py:145 .\KarlsbadApartmentsA\settings.py:155
 msgid "English"
 msgstr "English"
 
-#: .\KarlsbadApartmentsA\settings.py:145 .\KarlsbadApartmentsA\settings.py:155
+#: .\KarlsbadApartmentsA\settings.py:146 .\KarlsbadApartmentsA\settings.py:156
 msgid "German"
 msgstr "German"
 
-#: .\KarlsbadApartmentsA\settings.py:146 .\KarlsbadApartmentsA\settings.py:156
+#: .\KarlsbadApartmentsA\settings.py:147 .\KarlsbadApartmentsA\settings.py:157
 msgid "Russian"
 msgstr "Russian"
 
-#: .\templates\base.html:9
+#: .\KarlsbadApartmentsA\urls.py:37
+msgid "admin/"
+msgstr ""
+
+#: .\KarlsbadApartmentsA\urls.py:40
+msgid "rooms/"
+msgstr ""
+
+#: .\KarlsbadApartmentsA\urls.py:41
+msgid "room/<int:pk>/"
+msgstr ""
+
+#: .\KarlsbadApartmentsA\urls.py:42
+msgid "reservation/"
+msgstr ""
+
+#: .\KarlsbadApartmentsA\urls.py:43
+#, fuzzy
+#| msgid "Kontakt"
+msgid "contact/"
+msgstr "Contact"
+
+#: .\KarlsbadApartmentsA\urls.py:46
+msgid "reserve/<int:room_id>/"
+msgstr ""
+
+#: .\templates\base.html:11 .\templates\base.html:16
+msgid ""
+"Karlsbad Apartments nabízí útulné a plně vybavené apartmány v lázeňské části "
+"Karlových Varů, ideální pro páry i rodiny s dětmi."
+msgstr "Karlsbad Apartments offers cozy and fully equipped apartments in the spa area of Karlovy Vary, ideal for couples and families with children."
+
+#: .\templates\base.html:12
+msgid ""
+"Karlsbad Apartments, ubytování Karlovy Vary, apartmány Karlovy Vary, "
+"pronájem apartmánů, lázeňské ubytování, rodinné ubytování"
+msgstr "Karlsbad Apartments, accommodation Karlovy Vary, apartments Karlovy Vary, apartment rental, spa accommodation, family accommodation"
+
+#: .\templates\base.html:15 .\templates\base.html:21 .\templates\base.html:26
 msgid "Karlsbad Apartments"
 msgstr "Karlsbad Apartments"
 
-#: .\templates\base.html:20
+#: .\templates\base.html:22
+msgid ""
+"Karlsbad Apartments nabízí útulné a plně vybavené apartmány v lázeňské části "
+"Karlových Varů."
+msgstr "Karlsbad Apartments offers cozy and fully equipped apartments in the spa area of Karlovy Vary."
+
+#: .\templates\base.html:41
 msgid "karlsbad_apartments@email.cz"
 msgstr "karlsbad_apartments@email.cz"
 
-#: .\templates\base.html:27 .\templates\base.html:33
-msgid "Čeština"
-msgstr "Czech"
-
-#: .\templates\base.html:39
-msgid "Angličtina"
-msgstr "English"
-
-#: .\templates\base.html:45
-msgid "Němčina"
-msgstr "German"
-
-#: .\templates\base.html:51
-msgid "Ruština"
-msgstr "Russian"
-
-#: .\templates\base.html:66
+#: .\templates\base.html:108
 msgid "Toggle navigation"
 msgstr "Toggle navigation"
 
-#: .\templates\base.html:72
+#: .\templates\base.html:114
 msgid "Domů"
 msgstr "Home"
 
-#: .\templates\base.html:75
+#: .\templates\base.html:117
 msgid "Rezervace"
 msgstr "Reservation"
 
-#: .\templates\base.html:78
+#: .\templates\base.html:120
 msgid "Pokoje"
 msgstr "Rooms"
 
-#: .\templates\base.html:81 .\templates\contact.html:6
+#: .\templates\base.html:123 .\templates\contact.html:6
 msgid "Kontakt"
 msgstr "Contact"
 
-#: .\templates\base.html:95
+#: .\templates\base.html:147 .\templates\privacy.html:4
+#: .\templates\privacy.html:8
+msgid "Zásady zpracování osobních údajů"
+msgstr "Privacy Policy"
+
+#: .\templates\base.html:148
+msgid "Storno podmínky"
+msgstr "Cancellation Policy"
+
+#: .\templates\base.html:153
 msgid "Všechna práva vyhrazena"
 msgstr "All rights reserved"
 
@@ -106,11 +143,17 @@ msgstr "Your message"
 msgid "Odeslat zprávu"
 msgstr "Send message"
 
-#: .\templates\home.html:12
+#: .\templates\home.html:6
+#, fuzzy
+#| msgid "Karlsbad Apartments"
+msgid "Domů - Karlsbad Apartments"
+msgstr "Karlsbad Apartments"
+
+#: .\templates\home.html:13
 msgid "Vítejte na stránkách Karlsbad Apartments"
 msgstr "Welcome to Karlsbad Apartments website"
 
-#: .\templates\home.html:13
+#: .\templates\home.html:14
 msgid ""
 "Útulně zařízené apartmány s unikátní polohou, v lázeňské části Karlových "
 "Varů, jen pár minut chůze od hlavní Mlýnské kolonády a Vřídla. Určeny jsou "
@@ -123,79 +166,185 @@ msgid ""
 "můžete využít nedaleké sjezdovky na Klínovci, zažít vánoční atmosféru na "
 "místních vánočních trzích, v létě pak nespočetné množství turistických tras "
 "a kulturních akcí, například celosvětově známý Filmový festival."
-msgstr ""
-"Cozy apartments with a unique location in the spa area of Karlovy Vary, just a few "
-"minutes' walk from the main Mill Colonnade and the Hot Spring. Suitable for couples "
-"as well as families with children. Pets are also allowed and welcome in our "
-"accommodation. We offer fully equipped double and quadruple apartments. Come and "
-"enjoy the pleasant atmosphere of this stunning city, take advantage of the year-round "
-"opportunity to taste spa springs, or swim directly in a pool with thermal water. You "
-"can also visit the unique Christmas House or Butterfly House located at Diana "
-"Observation Tower. In winter, you can enjoy the nearby ski slopes at Klínovec, "
-"experience the festive atmosphere at local Christmas markets, and in summer, explore "
-"countless hiking trails and cultural events, such as the world-famous Film Festival."
+msgstr "Cozy apartments with a unique location in the spa area of Karlovy Vary, just a few minutes' walk from the main Mill Colonnade and the Hot Spring. Suitable for couples as well as families with children. Pets are also allowed and welcome in our accommodation. We offer fully equipped double and quadruple apartments. Come and enjoy the pleasant atmosphere of this stunning city, take advantage of the year-round opportunity to taste spa springs, or swim directly in a pool with thermal water. You can also visit the unique Christmas House or Butterfly House located at Diana Observation Tower. In winter, you can enjoy the nearby ski slopes at Klínovec, experience the festive atmosphere at local Christmas markets, and in summer, explore countless hiking trails and cultural events, such as the world-famous Film Festival."
 
-#: .\templates\home.html:18
-msgid "Prohlédněte si náš apartmán"
-msgstr "Explore our apartment"
-
-#: .\templates\home.html:21
-msgid "Celý apartmán"
-msgstr "Entire apartment"
-
-#: .\templates\home.html:24
-msgid "Výhled z apartmánu"
-msgstr "View from the apartment"
-
-#: .\templates\home.html:30
-msgid "Prohlédněte si naše apartmány ve videu"
-msgstr "View our apartments in the video"
-
-#: .\templates\home.html:33
-msgid "Váš prohlížeč nepodporuje HTML5 video."
-msgstr "Your browser does not support HTML5 video."
-
-#: .\templates\home.html:39
+#: .\templates\home.html:19
 msgid "Rezervujte svůj pobyt"
 msgstr "Book your stay"
 
-#: .\templates\home.html:40
+#: .\templates\home.html:20
 msgid "Rezervovat nyní"
 msgstr "Book now"
 
-#: .\templates\home.html:44
+#: .\templates\home.html:25
+msgid "Prohlédněte si náš apartmán"
+msgstr "Explore our apartment"
+
+#: .\templates\home.html:28
+msgid "Celý apartmán"
+msgstr "Entire apartment"
+
+#: .\templates\home.html:31
+msgid "Výhled z apartmánu"
+msgstr "View from the apartment"
+
+#: .\templates\home.html:38
+msgid "Prohlédněte si naše apartmány ve videu"
+msgstr "View our apartments in the video"
+
+#: .\templates\home.html:41
+msgid "Váš prohlížeč nepodporuje HTML5 video."
+msgstr "Your browser does not support HTML5 video."
+
+#: .\templates\home.html:47
 msgid "Naše pokoje"
 msgstr "Our rooms"
 
-#: .\templates\rooms\room_list.html:24
+#: .\templates\home.html:56 .\templates\rooms\room_list.html:24
 msgid "Více informací"
 msgstr "More information"
+
+#: .\templates\privacy.html:10
+msgid ""
+"Tyto zásady popisují, jakým způsobem zpracováváme vaše osobní údaje v "
+"souladu s Obecným nařízením o ochraně osobních údajů (GDPR)."
+msgstr "These policies describe how we process your personal data in accordance with the General Data Protection Regulation (GDPR)."
+
+#: .\templates\privacy.html:13
+msgid "Kdo je správcem vašich údajů?"
+msgstr "Who is the data controller?"
+
+#: .\templates\privacy.html:15
+msgid "Správcem vašich osobních údajů je provozovatel stránek "
+msgstr "The data controller is the operator of the website"
+
+#: .\templates\privacy.html:16
+msgid "se sídlem v Karlových Varech. Kontaktovat nás můžete na e-mailu"
+msgstr "based in Karlovy Vary. You can contact us via email"
+
+#: .\templates\privacy.html:20
+msgid "Jaké údaje zpracováváme?"
+msgstr "What data do we process?"
+
+#: .\templates\privacy.html:22
+msgid ""
+"Zpracováváme údaje, které nám poskytnete prostřednictvím rezervačního "
+"systému Previo a kontaktního formuláře, jako například vaše jméno, e-"
+"mailovou adresu, telefonní číslo a další informace nezbytné pro zajištění "
+"rezervace nebo komunikaci."
+msgstr "We process the data you provide through the Previo booking system and contact form, such as your name, email address, phone number, and other information necessary for booking or communication."
+
+#: .\templates\privacy.html:25
+msgid "Za jakým účelem údaje zpracováváme?"
+msgstr "For what purpose do we process data?"
+
+#: .\templates\privacy.html:27
+msgid "Zajištění a správa rezervací ubytování"
+msgstr "Ensuring and managing accommodation bookings"
+
+#: .\templates\privacy.html:28
+msgid "Komunikace s hosty a vyřízení jejich dotazů"
+msgstr "Communication with guests and addressing their inquiries"
+
+#: .\templates\privacy.html:29
+msgid "Plnění zákonných povinností (např. vedení účetnictví)"
+msgstr "Fulfillment of legal obligations (e.g., accounting)"
+
+#: .\templates\privacy.html:32
+msgid "Jak dlouho údaje uchováváme?"
+msgstr "How long do we store data?"
+
+#: .\templates\privacy.html:34
+msgid ""
+"Vaše osobní údaje uchováváme pouze po dobu nezbytně nutnou pro splnění "
+"účelu, pro který byly shromážděny, nebo po dobu stanovenou právními předpisy."
+msgstr "We store your personal data only for as long as necessary to fulfill the purpose for which it was collected, or for the period required by law."
+
+#: .\templates\privacy.html:37
+msgid "Komu mohou být údaje zpřístupněny?"
+msgstr "Who can access the data?"
+
+#: .\templates\privacy.html:39
+msgid ""
+"Vaše údaje mohou být zpřístupněny našim smluvním partnerům, jako je "
+"poskytovatel rezervačního systému Previo nebo účetní společnosti, a to pouze "
+"v rozsahu nutném pro plnění smluvních a zákonných povinností."
+msgstr "Your data may be made accessible to our contractual partners, such as the provider of the Previo booking system or accounting companies, but only to the extent necessary to fulfill contractual and legal obligations."
+
+#: .\templates\privacy.html:42
+#, fuzzy
+#| msgid "Vaše zpráva"
+msgid "Jaká máte práva?"
+msgstr "What rights do you have?"
+
+#: .\templates\privacy.html:44
+msgid ""
+"Máte právo na přístup k vašim údajům, jejich opravu nebo výmaz, omezení "
+"zpracování, vznesení námitky proti zpracování a přenositelnost údajů. Pokud "
+"se domníváte, že vaše práva byla porušena, máte právo podat stížnost u "
+"dozorového úřadu (Úřad pro ochranu osobních údajů)."
+msgstr "You have the right to access your data, correct or delete it, restrict its processing, object to its processing, and portability of the data. If you believe your rights have been violated, you have the right to file a complaint with the supervisory authority (the Office for Personal Data Protection)."
+
+#: .\templates\privacy.html:47
+msgid "Jak chráníme vaše údaje?"
+msgstr "How do we protect your data?"
+
+#: .\templates\privacy.html:49
+msgid ""
+"Používáme odpovídající technická a organizační opatření k ochraně osobních "
+"údajů před neoprávněným přístupem, ztrátou nebo zneužitím. Přístup k osobním "
+"údajům mají pouze oprávněné osoby a naši smluvní partneři, kteří se zavázali "
+"k ochraně údajů."
+msgstr "We use appropriate technical and organizational measures to protect personal data against unauthorized access, loss, or misuse. Access to personal data is restricted to authorized persons and our contractual partners who are committed to protecting the data."
+
+#: .\templates\privacy.html:52
+msgid "Cookies"
+msgstr "Cookies"
+
+#: .\templates\privacy.html:54
+msgid ""
+"Naše webové stránky používají soubory cookies pro zlepšení uživatelského "
+"prostředí a analýzu návštěvnosti. Používáním našich stránek souhlasíte s "
+"používáním cookies."
+msgstr "Our website uses cookies to improve the user experience and analyze traffic. By using our website, you agree to the use of cookies."
+
+#: .\templates\privacy.html:57
+#, fuzzy
+#| msgid "Kontakt"
+msgid "Kontakty"
+msgstr "Contact"
+
+#: .\templates\privacy.html:59
+msgid ""
+"Pokud máte jakékoliv dotazy nebo požadavky týkající se zpracování vašich "
+"osobních údajů, kontaktujte nás na e-mailové adrese"
+msgstr "If you have any questions or requests regarding the processing of your personal data, please contact us at"
 
 #: .\templates\rooms\reservation.html:5
 msgid "Rezervace ubytování"
 msgstr "Accommodation booking"
 
-#: .\templates\rooms\room_detail.html:23
+#: .\templates\rooms\room_detail.html:27
 msgid "Popis"
 msgstr "Description"
 
-#: .\templates\rooms\room_detail.html:25
+#: .\templates\rooms\room_detail.html:29
 msgid "Kapacita"
 msgstr "Capacity"
 
-#: .\templates\rooms\room_detail.html:25
+#: .\templates\rooms\room_detail.html:29
 msgid "osob"
 msgstr "persons"
 
-#: .\templates\rooms\room_detail.html:29
+#: .\templates\rooms\room_detail.html:33
 msgid "Galerie"
 msgstr "Gallery"
 
-#: .\templates\rooms\room_detail.html:39
+#: .\templates\rooms\room_detail.html:43
 msgid "Žádné další obrázky nejsou k dispozici."
 msgstr "No additional images available."
 
-#: .\templates\rooms\room_detail.html:46
+#: .\templates\rooms\room_detail.html:48
 msgid "Rezervovat tento pokoj"
 msgstr "Book this room"
 
@@ -206,6 +355,49 @@ msgstr "Room list"
 #: .\templates\rooms\room_list.html:19
 msgid "Výchozí obrázek"
 msgstr "Default image"
+
+#: .\templates\terms.html:4 .\templates\terms.html:8
+msgid "Obchodní podmínky"
+msgstr "Terms and conditions"
+
+#: .\templates\terms.html:9
+msgid ""
+"Tyto obchodní podmínky platí pro služby poskytované Karlsbad Apartments."
+msgstr "These terms and conditions apply to the services provided by Karlsbad Apartments."
+
+#: .\templates\terms.html:11
+msgid "1. Úvodní ustanovení"
+msgstr "1. Introduction"
+
+#: .\templates\terms.html:12
+msgid ""
+"Tento dokument stanovuje pravidla a podmínky využívání ubytovacích služeb."
+msgstr "This document sets forth the rules and conditions for using accommodation services."
+
+#: .\templates\terms.html:14
+#, fuzzy
+#| msgid "Rezervace"
+msgid "2. Rezervace a platby"
+msgstr "Reservation"
+
+#: .\templates\terms.html:15
+msgid ""
+"Rezervace probíhá přes systém Previo. Platba může být provedena online nebo "
+"na místě."
+msgstr "Reservations are made through the Previo system. Payment can be made online or on-site."
+
+#: .\templates\terms.html:17
+msgid "3. Storno podmínky"
+msgstr "Cancellation Policy"
+
+#: .\templates\terms.html:18
+msgid "Hosté mohou rezervaci zrušit dle podmínek uvedených při rezervaci."
+msgstr "Guests may cancel their reservation according to the terms provided during booking."
+
+#: .\venv\Lib\site-packages\_pytest\config\argparsing.py:475
+#, python-format
+msgid "ambiguous option: %(option)s could match %(matches)s"
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
 msgid "Messages"
@@ -249,84 +441,84 @@ msgstr ""
 msgid "Enter a valid domain name."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:155
+#: .\venv\Lib\site-packages\django\core\validators.py:152
 #: .\venv\Lib\site-packages\django\forms\fields.py:768
 msgid "Enter a valid URL."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:216
+#: .\venv\Lib\site-packages\django\core\validators.py:213
 msgid "Enter a valid integer."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:227
+#: .\venv\Lib\site-packages\django\core\validators.py:224
 msgid "Enter a valid email address."
 msgstr ""
 
 #. Translators: "letters" means latin letters: a-z and A-Z.
-#: .\venv\Lib\site-packages\django\core\validators.py:310
+#: .\venv\Lib\site-packages\django\core\validators.py:307
 msgid ""
 "Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:318
+#: .\venv\Lib\site-packages\django\core\validators.py:315
 msgid ""
 "Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
 "hyphens."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:330
-#: .\venv\Lib\site-packages\django\core\validators.py:339
-#: .\venv\Lib\site-packages\django\core\validators.py:353
+#: .\venv\Lib\site-packages\django\core\validators.py:327
+#: .\venv\Lib\site-packages\django\core\validators.py:336
+#: .\venv\Lib\site-packages\django\core\validators.py:350
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2215
 #, python-format
 msgid "Enter a valid %(protocol)s address."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:332
+#: .\venv\Lib\site-packages\django\core\validators.py:329
 msgid "IPv4"
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:341
-#: .\venv\Lib\site-packages\django\utils\ipv6.py:43
+#: .\venv\Lib\site-packages\django\core\validators.py:338
+#: .\venv\Lib\site-packages\django\utils\ipv6.py:30
 msgid "IPv6"
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:355
+#: .\venv\Lib\site-packages\django\core\validators.py:352
 msgid "IPv4 or IPv6"
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:396
+#: .\venv\Lib\site-packages\django\core\validators.py:393
 msgid "Enter only digits separated by commas."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:402
+#: .\venv\Lib\site-packages\django\core\validators.py:399
 #, python-format
 msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:437
+#: .\venv\Lib\site-packages\django\core\validators.py:434
 #, python-format
 msgid "Ensure this value is less than or equal to %(limit_value)s."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:446
+#: .\venv\Lib\site-packages\django\core\validators.py:443
 #, python-format
 msgid "Ensure this value is greater than or equal to %(limit_value)s."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:455
+#: .\venv\Lib\site-packages\django\core\validators.py:452
 #, python-format
 msgid "Ensure this value is a multiple of step size %(limit_value)s."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:462
+#: .\venv\Lib\site-packages\django\core\validators.py:459
 #, python-format
 msgid ""
 "Ensure this value is a multiple of step size %(limit_value)s, starting from "
 "%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:494
+#: .\venv\Lib\site-packages\django\core\validators.py:491
 #, python-format
 msgid ""
 "Ensure this value has at least %(limit_value)d character (it has "
@@ -337,7 +529,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:512
+#: .\venv\Lib\site-packages\django\core\validators.py:509
 #, python-format
 msgid ""
 "Ensure this value has at most %(limit_value)d character (it has "
@@ -348,27 +540,27 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:535
+#: .\venv\Lib\site-packages\django\core\validators.py:532
 #: .\venv\Lib\site-packages\django\forms\fields.py:359
 #: .\venv\Lib\site-packages\django\forms\fields.py:398
 msgid "Enter a number."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:537
+#: .\venv\Lib\site-packages\django\core\validators.py:534
 #, python-format
 msgid "Ensure that there are no more than %(max)s digit in total."
 msgid_plural "Ensure that there are no more than %(max)s digits in total."
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:542
+#: .\venv\Lib\site-packages\django\core\validators.py:539
 #, python-format
 msgid "Ensure that there are no more than %(max)s decimal place."
 msgid_plural "Ensure that there are no more than %(max)s decimal places."
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:547
+#: .\venv\Lib\site-packages\django\core\validators.py:544
 #, python-format
 msgid ""
 "Ensure that there are no more than %(max)s digit before the decimal point."
@@ -377,23 +569,23 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:618
+#: .\venv\Lib\site-packages\django\core\validators.py:615
 #, python-format
 msgid ""
 "File extension “%(extension)s” is not allowed. Allowed extensions are: "
 "%(allowed_extensions)s."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\core\validators.py:680
+#: .\venv\Lib\site-packages\django\core\validators.py:677
 msgid "Null characters are not allowed."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\db\models\base.py:1572
+#: .\venv\Lib\site-packages\django\db\models\base.py:1571
 #: .\venv\Lib\site-packages\django\forms\models.py:908
 msgid "and"
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\db\models\base.py:1574
+#: .\venv\Lib\site-packages\django\db\models\base.py:1573
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr ""
@@ -753,11 +945,11 @@ msgstr ""
 msgid "Enter a complete value."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:1332
+#: .\venv\Lib\site-packages\django\forms\fields.py:1329
 msgid "Enter a valid UUID."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:1362
+#: .\venv\Lib\site-packages\django\forms\fields.py:1359
 msgid "Enter a valid JSON."
 msgstr ""
 
@@ -1200,7 +1392,7 @@ msgctxt "alt. month"
 msgid "December"
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\utils\ipv6.py:20
+#: .\venv\Lib\site-packages\django\utils\ipv6.py:8
 msgid "This is not a valid IPv6 address."
 msgstr ""
 
@@ -1430,3 +1622,15 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:236
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#~ msgid "Čeština"
+#~ msgstr "Czech"
+
+#~ msgid "Angličtina"
+#~ msgstr "English"
+
+#~ msgid "Němčina"
+#~ msgstr "German"
+
+#~ msgid "Ruština"
+#~ msgstr "Russian"
